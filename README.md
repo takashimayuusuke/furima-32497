@@ -7,7 +7,6 @@
 | name                         | string  | null: false               |
 | email                        | string  | null: false, unique: true |
 | encrypted_password           | string  | null: false               |
-| name                         | string  | null: false               |
 | last_name_chinese_character  | string  | null: false               |
 | first_name_chinese_character | string  | null: false               |
 | last_name_kana               | string  | null: false               |
