@@ -20,15 +20,15 @@
 
 ## items テーブル
 
-| Column                  | Type          | Options            |
-| ----------------------- | ------------- | ------------------ |
-| name                    | string        | null: false        |
-| explanation_category    | string        | null: false        |
-| explanation_condition   | string        | null: false        |
-| delivery_fee            | string        | null: false        |
-| shipment_source_address | string        | null: false        |
-| shipment_days           | string        | null: false        |
-| seller                  | references    | foreign_key: true  |
+| Column                     | Type           | Options            |
+| -------------------------- | -------------- | ------------------ |
+| name                       | string         | null: false        |
+| explanation_category_id    | integer        | null: false        |
+| explanation_condition_id   | integer        | null: false        |
+| delivery_fee               | string         | null: false        |
+| shipment_source_address_id | integer        | null: false        |
+| shipment_days              | string         | null: false        |
+| seller                     | references     | foreign_key: true  |
 
 ### Associations
 
