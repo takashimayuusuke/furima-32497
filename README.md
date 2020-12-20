@@ -28,7 +28,7 @@
 | delivery_fee               | string         | null: false        |
 | shipment_source_address_id | integer        | null: false        |
 | shipment_days              | string         | null: false        |
-| seller                     | references     | foreign_key: true  |
+| user                       | references     | foreign_key: true  |
 
 ### Associations
 
