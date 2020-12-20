@@ -11,9 +11,7 @@
 | first_name_chinese_character | string  | null: false               |
 | last_name_kana               | string  | null: false               |
 | first_name_kana              | string  | null: false               |
-| birth_year                   | string  | null: false               |
-| birth_month                  | string  | null: false               |
-| birth_day                    | string  | null: false               |
+| birth                        | date    | null: false               |
 
 ### Associations
 
