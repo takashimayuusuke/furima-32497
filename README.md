@@ -51,14 +51,14 @@
 
 ## Shippings テーブル
 
-| Column          | Type             | Options                 |
-| --------------- | ---------------- | ----------------------- |
-| postal_code     | string           | null :false             |
-| prefectures     | string           | null :false             |
-| municipality    | string           | null :false             | 
-| address         | string           | null :false             |
-| building        | string           | null :false             |
-| phone           | string           | null :false             |
+| Column          | Type    | Options     |
+| --------------- | ------- | ----------- |
+| postal_code     | string  | null :false |
+| prefectures_id  | integer | null :false |
+| municipality    | string  | null :false |
+| address         | string  | null :false |
+| building        | string  |             |
+| phone           | string  | null :false |
 
 ### Association
 - belongs_to :shipping
