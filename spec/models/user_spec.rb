@@ -7,15 +7,20 @@ RSpec.describe User, type: :model do
     end
 
     it "name,email,password,password_confirmation,last_name_chinese_character,first_name_chinese_character,last_name_kana,first_name_kana,birthが存在すれば登録できる" do
-      
+      expect(@user).to be_valid
     end
 
     it "nameが空では登録できない" do
-      
+      @user.name = ""
+      @user.valid?
+      expect(@user.errors.full_messages).to include("Name can't be blank")
     end
 
     it "emailが空では登録できない" do
-      
+      @user.email = ""
+      @user.valid?
+      binding.pry
+      expect(@user.errors.full_messages).to include("Email can't be blank")
     end
 
     it "passwordが6文字以上かつ半角英数字が混合していれば登録できる" do
