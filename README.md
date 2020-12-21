@@ -25,9 +25,9 @@
 | name                       | string         | null: false        |
 | explanation_category_id    | integer        | null: false        |
 | explanation_condition_id   | integer        | null: false        |
-| delivery_fee               | string         | null: false        |
+| delivery_fee_id            | integer        | null: false        |
 | shipment_source_address_id | integer        | null: false        |
-| shipment_days              | string         | null: false        |
+| shipment_days_id           | integer        | null: false        |
 | user                       | references     | foreign_key: true  |
 | explanation                | text           | null: false        |
 | price                      | string         | null: false        |
