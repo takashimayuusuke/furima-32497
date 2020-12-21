@@ -62,4 +62,4 @@
 | item             | references | buy_id, foreign_key: true |
 
 ### Association
-- belongs_to :shipping
+- belongs_to :buy
