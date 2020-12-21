@@ -51,15 +51,15 @@
 
 ## Shippings テーブル
 
-| Column           | Type       | Options           |
-| ---------------- | ---------- | ----------------- |
-| postal_code      | string     | null :false       |
-| prefectures_id   | integer    | null :false       |
-| municipality     | string     | null :false       |
-| address          | string     | null :false       |
-| building         | string     |                   |
-| phone            | string     | null :false       |
-| item             | references | foreign_key: true |
+| Column           | Type       | Options                    |
+| ---------------- | ---------- | -------------------------- |
+| postal_code      | string     | null :false                |
+| prefectures_id   | integer    | null :false                |
+| municipality     | string     | null :false                |
+| address          | string     | null :false                |
+| building         | string     |                            |
+| phone            | string     | null :false                |
+| item             | references | buy_id, foreign_key: true |
 
 ### Association
 - belongs_to :shipping
