@@ -30,7 +30,7 @@
 | shipment_days_id           | integer        | null: false        |
 | user                       | references     | foreign_key: true  |
 | explanation                | text           | null: false        |
-| price                      | string         | null: false        |
+| price                      | integer         | null: false        |
 
 ### Associations
 
