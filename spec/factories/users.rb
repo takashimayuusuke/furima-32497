@@ -9,7 +9,7 @@ FactoryBot.define do
     first_name_chinese_character {"高嶋"}
     last_name_kana {"ユウスケ"}
     first_name_kana {"タカシマ"}
-    birth {1988-12-07}
+    birth {"1988-12-07"}
 
 
   end

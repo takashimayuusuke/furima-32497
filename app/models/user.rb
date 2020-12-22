@@ -8,6 +8,11 @@ class User < ApplicationRecord
 
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/
   validates :password, format:{ with: VALID_PASSWORD_REGEX }
+
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, format:{ with: VALID_EMAIL_REGEX }
+
+
   with_options presence: true do
     validates :name
     validates :last_name_chinese_character, format: {with: /\A[一-龥ぁ-ん]/ }
