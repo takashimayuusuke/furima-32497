@@ -10,8 +10,8 @@ class User < ApplicationRecord
   validates :password, format:{ with: VALID_PASSWORD_REGEX }
 
   validates :name, presence: true
-  validates :last_name_chinese_character, presence: true
-  validates :first_name_chinese_character, presence: true
+  validates :last_name_chinese_character, presence: true, format: {with: /\A[一-龥ぁ-ん]/ }
+  validates :first_name_chinese_character, presence: true, format: {with: /\A[一-龥ぁ-ん]/ }
   validates :last_name_kana, presence: true, format: {with: /\A[ァ-ヶー－]+\z/ }
   validates :first_name_kana, presence: true, format: {with: /\A[ァ-ヶー－]+\z/ }
   validates :birth, presence: true
