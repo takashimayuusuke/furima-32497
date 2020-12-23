@@ -2,7 +2,7 @@ class Item < ApplicationRecord
   has_many :items
 
 
-  extend ActiveHash::Associations::ApplicationRecordExtensions
+  extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :explanation_category
   belongs_to :explanation_condition
   belongs_to :delivery_fee

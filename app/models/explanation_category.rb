@@ -13,6 +13,6 @@ class ExplanationCategory < ActiveHash::Base
     { id: 11, name: 'その他' },
   ]
 
-  inculude ActiveHash::Associations
+  include ActiveHash::Associations
   has_many :items
 end

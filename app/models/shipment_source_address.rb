@@ -50,7 +50,7 @@ class ShipmentSourceAddress < ActiveHash::Base
     { id: 48, name: '沖縄県' },
   ]
 
-  inculude ActiveHash::Associations
+  include ActiveHash::Associations
   has_many :items
 
 end
