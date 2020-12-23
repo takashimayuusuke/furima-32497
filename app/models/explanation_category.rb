@@ -1,0 +1,2 @@
+class ExplanationCategory < ApplicationRecord
+end
