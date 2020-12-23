@@ -1,0 +1,2 @@
+class ExplanationCondition < ApplicationRecord
+end
