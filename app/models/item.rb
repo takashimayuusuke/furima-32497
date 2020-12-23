@@ -4,6 +4,10 @@ class Item < ApplicationRecord
 
   extend ActiveHash::Associations::ApplicationRecordExtensions
   belongs_to :explanation_category
+  belongs_to :explanation_condition
+  belongs_to :delivery_fee
+  belongs_to :shipment_source_address
+  belongs_to :shipment_day
 
   validates :name, presence: true
   validates :explanation, presence: true
