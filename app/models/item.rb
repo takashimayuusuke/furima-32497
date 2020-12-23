@@ -11,6 +11,6 @@ class Item < ApplicationRecord
 
   validates :explanation_category_id, numericality: { other_than: 1 }
   validates :explanation_condition_id, numericality: { other_than: 1 }
-
+  validates :delivery_fee_id, numericality: { other_than: 1 }
 
 end

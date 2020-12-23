@@ -12,5 +12,3 @@ class ExplanationCondition < ActiveHash::Base
   inculude ActiveHash::Associations
   has_many :items
 end
-
-end
