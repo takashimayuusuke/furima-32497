@@ -13,5 +13,6 @@ class Item < ApplicationRecord
   validates :explanation_condition_id, numericality: { other_than: 1 }
   validates :delivery_fee_id, numericality: { other_than: 1 }
   validates :shipment_source_address_id, numericality: { other_than: 1 }
+  validates :shipment_day_id, numericality: { other_than: 1 }
 
 end
