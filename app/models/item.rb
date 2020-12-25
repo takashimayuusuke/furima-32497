@@ -14,6 +14,7 @@ class Item < ApplicationRecord
     validates :name 
     validates :explanation 
     validates :price, format:{ with: /\A[0-9]+\z/ }
+    validates_inclusion_of :price, in 300..9999999
   end
 
   validates :explanation_category_id, numericality: { other_than: 1 }
