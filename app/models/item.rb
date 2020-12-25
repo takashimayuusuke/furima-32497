@@ -14,6 +14,7 @@ class Item < ApplicationRecord
     validates :explanation
     validates :price, format: { with: /\A[0-9]+\z/ }
     validates_inclusion_of :price, in: 300..9_999_999
+    validates :image
   end
 
   with_options numericality: { other_than: 1 } do
@@ -23,5 +24,4 @@ class Item < ApplicationRecord
     validates :shipment_source_address_id
     validates :shipment_day_id
   end
-  validates :image, presence: true
 end
