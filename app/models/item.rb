@@ -9,10 +9,12 @@ class Item < ApplicationRecord
   belongs_to :delivery_fee
   belongs_to :shipment_source_address
   belongs_to :shipment_day
-
-  validates :name, presence: true
-  validates :explanation, presence: true
-  validates :price, presence: true
+  
+  with_options presence: true do
+    validates :name 
+    validates :explanation 
+    validates :price, format:{ with: /\A[0-9]+\z/ }
+  end
 
   validates :explanation_category_id, numericality: { other_than: 1 }
   validates :explanation_condition_id, numericality: { other_than: 1 }
