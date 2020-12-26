@@ -23,5 +23,4 @@ class Item < ApplicationRecord
       validates :shipment_day_id
     end
   end
-
 end
