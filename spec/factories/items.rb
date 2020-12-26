@@ -7,7 +7,7 @@ FactoryBot.define do
     shipment_source_address_id    { 2 }
     shipment_day_id               { 2 }
     explanation                   { '説明文' }
-    price                         { '1000' }
+    price                         { 1000 }
     association :user
 
     after(:build) do |item|
