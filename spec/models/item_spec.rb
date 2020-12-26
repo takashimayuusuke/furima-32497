@@ -45,7 +45,7 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include('Explanation condition is not a number')
       end
       
-      it 'カテゴリーの状態が1の時には登録できない' do
+      it '商品の状態が1の時には登録できない' do
         @item.explanation_condition_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Explanation condition must be other than 1")
