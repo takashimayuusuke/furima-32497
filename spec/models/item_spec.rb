@@ -36,55 +36,55 @@ RSpec.describe Item, type: :model do
       it 'カテゴリー情報が1の時には登録できない' do
         @item.explanation_category_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Explanation category must be other than 1")
+        expect(@item.errors.full_messages).to include('Explanation category must be other than 1')
       end
-      
+
       it '商品の状態がないと登録できない' do
         @item.explanation_condition_id = ''
         @item.valid?
         expect(@item.errors.full_messages).to include('Explanation condition is not a number')
       end
-      
+
       it '商品の状態が1の時には登録できない' do
         @item.explanation_condition_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Explanation condition must be other than 1")
+        expect(@item.errors.full_messages).to include('Explanation condition must be other than 1')
       end
-      
+
       it '配送料の負担がないと登録できない' do
         @item.delivery_fee_id = ''
         @item.valid?
         expect(@item.errors.full_messages).to include('Delivery fee is not a number')
       end
-      
+
       it '配送料の負担が1の時には保存できない' do
         @item.delivery_fee_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Delivery fee must be other than 1")
+        expect(@item.errors.full_messages).to include('Delivery fee must be other than 1')
       end
-      
+
       it '発送元の地域がないと保存できない' do
         @item.shipment_source_address_id = ''
         @item.valid?
         expect(@item.errors.full_messages).to include('Shipment source address is not a number')
       end
-      
+
       it '発送元の地域が1の時には保存できない' do
         @item.shipment_source_address_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipment source address must be other than 1")
+        expect(@item.errors.full_messages).to include('Shipment source address must be other than 1')
       end
-      
+
       it '発送までの日数がないと保存できない' do
         @item.shipment_day_id = ''
         @item.valid?
         expect(@item.errors.full_messages).to include('Shipment day is not a number')
       end
-      
+
       it '発送までの日数が1の時には保存できない' do
         @item.shipment_day_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipment day must be other than 1")
+        expect(@item.errors.full_messages).to include('Shipment day must be other than 1')
       end
       it '価格がないと保存できない' do
         @item.price = ''
@@ -97,7 +97,7 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include('Price is not included in the list')
       end
       it '価格の上限が9999999円まででないと登録できない' do
-        @item.price = 10000000
+        @item.price = 10_000_000
         @item.valid?
         expect(@item.errors.full_messages).to include('Price is not included in the list')
       end
@@ -110,13 +110,13 @@ RSpec.describe Item, type: :model do
       it '価格は、半角英語だけでは登録できない' do
         @item.price = 'aaa'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is not included in the list")
+        expect(@item.errors.full_messages).to include('Price is not included in the list')
       end
-      
+
       it '価格は、半角英数混合では登録できない' do
         @item.price = '3aa'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is not included in the list")
+        expect(@item.errors.full_messages).to include('Price is not included in the list')
       end
     end
   end
