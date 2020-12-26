@@ -15,13 +15,13 @@ class Item < ApplicationRecord
     validates :price, format: { with: /\A[0-9]+\z/ }
     validates_inclusion_of :price, in: 300..9_999_999
     validates :image
+    with_options numericality: { other_than: 1 } do
+      validates :explanation_category_id
+      validates :explanation_condition_id
+      validates :delivery_fee_id
+      validates :shipment_source_address_id
+      validates :shipment_day_id
+    end
   end
 
-  with_options numericality: { other_than: 1 } do
-    validates :explanation_category_id
-    validates :explanation_condition_id
-    validates :delivery_fee_id
-    validates :shipment_source_address_id
-    validates :shipment_day_id
-  end
 end
