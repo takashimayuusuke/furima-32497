@@ -91,7 +91,7 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Price can't be blank")
       end
-      it '価格の加減はが300円以上でないと登録できない' do
+      it '価格の下減はが300円以上でないと登録できない' do
         @item.price = 299
         @item.valid?
         expect(@item.errors.full_messages).to include('Price is not included in the list')
@@ -107,13 +107,13 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include('Price is not included in the list')
       end
 
-      it '半角英語だけでは登録できない' do
+      it '価格は、半角英語だけでは登録できない' do
         @item.price = 'aaa'
         @item.valid?
         expect(@item.errors.full_messages).to include("Price is not included in the list")
       end
       
-      it '半角英数混合では登録できない' do
+      it '価格は、半角英数混合では登録できない' do
         @item.price = '3aa'
         @item.valid?
         expect(@item.errors.full_messages).to include("Price is not included in the list")
