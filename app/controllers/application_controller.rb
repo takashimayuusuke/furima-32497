@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   private
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :last_name_chinese_character, :first_name_chinese_character, :last_name_kana, :first_name_kana, :birth])
+    devise_parameter_sanitizer.permit(:sign_up,
+                                      keys: [:name, :last_name_chinese_character, :first_name_chinese_character,
+                                             :last_name_kana, :first_name_kana, :birth])
   end
 end
