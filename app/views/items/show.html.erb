@@ -104,7 +104,7 @@
     </a>
   </div>
   <%# 詳細ページで表示されている商品のカテゴリー名を表示しましょう %>
-  <a href=“#” class=‘another-item’><%= "#{@item.explanation_category.name}" %>をもっと見る</a>
+  <%= link_to "#{@item.explanation_category.name}をもっと見る", item_path(@item.id), method: :get, class: "another-item" %>
   <%# //詳細ページで表示されている商品のカテゴリー名を表示しましょう %>
 </div>
 
