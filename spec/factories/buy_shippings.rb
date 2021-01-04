@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :buy_shipping do
-    postal_code { '123-4567'} 
+    postal_code { '123-4567' } 
     shipment_source_address_id { 2 }
     municipality { '取手市' }
     address { '上町1-1-1' }
