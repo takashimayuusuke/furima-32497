@@ -5,17 +5,19 @@ class OrdersController < ApplicationController
   end
   
   def create
+    @item = Item.find(params[:item_id])
     @buy_shipping =BuyShipping.new(buy_shipping_params)
     if @buy_shipping.valid?
       @buy_shipping.save
       redirect_to root_path(@buy_shipping)
     else
       render action: :index
+    end
   end
-end
 
-private
+  private
 
-def buy_shipping_params
-  params.require(:buy_shipping).permit(:user, :item, :postal_code, :shipment_source_address_id,:municipality, :address, :building, :phone, :buy)
+  def buy_shipping_params
+    params.require(:buy_shipping).permit(:postal_code, :shipment_source_address_id,:municipality, :address, :building, :phone,).merge(user_id: current_user.id, item_id: params[:item_id])
+  end
 end
