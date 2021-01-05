@@ -11,6 +11,7 @@ class BuyShipping
     validates :municipality
     validates :address
     validates :phone, format: { with: /\A\d{11}\z/ }
+    validates :token
   end
   
 
