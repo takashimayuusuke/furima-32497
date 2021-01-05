@@ -3,7 +3,7 @@ class BuyShipping
   include ActiveModel::Model
   attr_accessor :user_id, :item_id, :postal_code, :shipment_source_address_id,
   :municipality, :address,
-  :building, :phone
+  :building, :phone, :token
 
   with_options presence: true do
     validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)" }
