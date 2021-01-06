@@ -31,9 +31,7 @@ class OrdersController < ApplicationController
   end
 
   def contributor_confirmation
-    if current_user.id == @item.user_id
-      redirect_to root_path
-    elsif current_user.id && !@item.buy.nil?
+    if current_user.id == @item.user_id || current_user.id && !@item.buy.nil?
       redirect_to root_path
     end
   end
