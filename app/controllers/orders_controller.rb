@@ -1,11 +1,14 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_item, only:[:index, :create]
+  before_action :contributor_confirmation, only: [:index, :create]
+
+
   def index
-    @item = Item.find(params[:item_id])
     @buy_shipping = BuyShipping.new
   end
   
   def create
-    @item = Item.find(params[:item_id])
     @buy_shipping =BuyShipping.new(buy_shipping_params)
     if @buy_shipping.valid?
       pay_item
@@ -22,8 +25,20 @@ class OrdersController < ApplicationController
     params.require(:buy_shipping).permit(:postal_code, :shipment_source_address_id,:municipality, :address, :building, :phone,).merge(user_id: current_user.id, item_id: params[:item_id], token: params[:token])
   end
 
+  def set_item
+    @item = Item.find(params[:item_id])
+  end
+
+  def contributor_confirmation
+    if current_user.id == @item.user_id 
+      redirect_to root_path 
+    elsif current_user.id && @item.buy != nil
+      redirect_to root_path
+    end
+  end
+
   def pay_item
-    Payjp.api_key = "sk_test_"
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     Payjp::Charge.create(
       amount: @item.price,
       card: buy_shipping_params[:token],
