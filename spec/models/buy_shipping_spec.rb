@@ -9,6 +9,10 @@ RSpec.describe BuyShipping, type: :model do
     it '郵便番号、発送先、市区町村、番地、建物名、電話番号、トークンが正しく入力されていれば保存できる' do
       expect(@buy_shipping).to be_valid
     end
+    it '建物名が空でも登録できる'do
+      @buy_shipping.building = ''
+      expect(@buy_shipping).to be_valid
+    end
     it 'トークンが空では登録できない' do
       @buy_shipping.token = ''
       @buy_shipping.valid?
@@ -55,6 +59,12 @@ RSpec.describe BuyShipping, type: :model do
       @buy_shipping.phone = ''
       @buy_shipping.valid?
       expect(@buy_shipping.errors.full_messages).to include("Phone can't be blank")
+    end
+
+    it 'phoneが11桁以内でないと登録できない'do
+      @buy_shipping.phone = '090123456789'
+      @buy_shipping.valid?
+      expect(@buy_shipping.errors.full_messages).to include("Phone is invalid")
     end
 
     it 'phoneにハイフンが含まれていると登録できない' do
